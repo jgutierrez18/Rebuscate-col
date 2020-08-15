@@ -1,0 +1,79 @@
+
+<div class="container p-4">
+  <h3>Mis publicaciones</h3>
+  <div class="row">
+    <div class="card-columns">
+      {{#each Vacantes}}
+
+      <div class="card bg-secondary animated jackInTheBox">
+        <div class="card-body">
+          <h3 class="heading heading-5 strong-600 card-title d-flex justify-content-between align-items-center">
+            {{titulo}}<a href="/vacantes/editar/{{_id}}"><i class="fas fa-edit"></i></a></h3>
+          <h5 class="text-muted mb-4">{{trabajo}}</h5>
+          <ul class="list-inline mb-4">
+            <li class="list-inline-item pr-2">
+              <i class="fas fa-dollar-sign mr-1"></i>{{dinero}}
+            </li>
+            <li class="list-inline-item">
+              <a href="">
+                <h6> <i class="fas fa-compass text-muted mr-1"></i>{{ciudad}}</h6>
+              </a>
+            </li>
+          </ul>
+          <img class="card-img-top" src="/img/img_Vacantes/{{imgNombre}}" alt="Imagen vacante" class="img-fluid">
+          <p class="card-text">{{descripcion}}</p>
+          <form action="/vacantes/eliminar/{{_id}}?_method=DELETE" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <button type="submit" class="btn btn-sm btn-success"> Eliminar Publicacion</button>
+          </form>
+          <div class="card-footer">
+            <div class="row align-items-center">
+              <div class="col">
+                <span class="avatar avatar-sm bg-purple"> </span>
+                <span class="avatar-content"></span>
+              </div>
+              <div class="col text-right text-xs-right">
+                <ul class="list-inline mb-0">
+                  <li class="list-inline-item pr-2">
+                    {{timeago date}}
+                  </li>
+                  <li class="list-inline-item pr-2">
+                    {{user.name}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      {{else}}
+      <div class="card mx-auto">
+        <div class="card-body">
+          <h1>Hola {{user.nombre}} </h1>
+          <p class="lead">Todavia no publicas Vacantes..</p>
+          <a href="/vacantes/crear" class="btn btn-success btn-block">Publicar un trabajo</a>
+        </div>
+      </div> {{/each}}
+    </div>
+  </div>
+</div>
+
+<!--<div class="container p-4">
+  <div class="row">
+    {{#each Vacantes}}
+    <div class="col-md-3">
+      <div class="card bg-secondary">
+       <div class="card-body">
+        <img alt="Card image cap" class="card-img-top img-fluid" src="https://www.fillmurray.com/420/200">
+      <div class="card-block">
+       
+        <h4 class="card-title">Boating is the new canoeing</h4>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      </div>
+    </div>
+    </div>{{/each}}
+  </div>
+</div> -->

@@ -1,0 +1,58 @@
+                       {{#each errors}}
+<div class="alert alert-inverse alert-dismissible fade show" role="alert">
+    <span class="alert-inner--icon text-danger"><i class="fas fa-times"></i></span>
+   {{text}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{{/each}}
+
+
+                <div class="card bg-primary text-white">
+                    <div class="card-body">
+<form action="/vacantes/actualizar/{{vancante._id}}?_method=put" method="POST">
+    <input type="hidden" name="_method" value="PUT">
+
+ 
+                       <div class=" d-flex align-items-center no-padding">
+                           <div class="col">
+                               <div class="row justify-content-center">
+                                   <div class="col-lg-6">
+                                       <div class="card bg-dark text-white">
+                                           <div class="card-body">
+                                                    <h1 class="text-white" align="center">EDITA LA  OFERTA DE TRABAJO</h1><br />
+                                                <div class="form-group">
+                                                <label ><strong>Título del trabajo</strong></label>
+                                                    <input value="{{vacante.titulo}}"class="form-control" name="titulo" type="text" placeholder="" /></div>
+                                                       <div class="form-group">
+
+                                                <label><strong>Escribe el tipo de trabajo</strong></label><br></br>
+                                                    <input value="{{vacante.trabajo}}"class="form-control" name="trabajo"  type="text" placeholder="Ejemplo: Ebanistería"></input>
+                                                </div>
+                                                   <div class="form-group">
+                                                <label ><strong>Escribe la ciudad del trabajo</strong></label>
+                                                    <input value="{{vacante.ciudad}}"class="form-control" name="ciudad" type="text" placeholder="Ejemplo: Bogotá" ></input>
+                                                </div>
+                                                       <div class="form-group">
+                                                <label ><strong>Cantidad de dinero a pagar</strong></label><br></br>
+                                                    <input value="{{vacante.dinero}}"class="form-control" name="dinero" type="text" placeholder="Ejemplo: 10.000" ></input></div>
+
+                                            <div class="form-group">
+                                                <label><strong>Descríbenos el trabajo</strong></label>
+                                                    <textarea name="descripcion" class="form-control" rows="6" cols="100" placeholder="">{{vacante.descripcion}}</textarea>
+                                            </div>
+                                            <div class="col-lg">
+                                                <button type="submit" class="btn btn-block btn-success btn-lg mt-4">Publicar</button>
+                                                
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> </form>
+                </div>
+            </div>
+           

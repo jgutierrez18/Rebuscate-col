@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-tertiary rounded">
+  <div class="container">
+                    <a class="navbar-brand" href="/">REBUSCATE Col</a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar_3" aria-controls="navbar_3" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="navbar_3">
+                      <ul class="navbar-nav">
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                          <a class="nav-link" href="/quienesSomos">Quienes Somos</a>
+                        </li>
+                         </ul>
+                        <ul class="navbar-nav ml-auto">
+                          {{#if user}}
+                         
+                            <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbar_3_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/usuario/perfil">Mi perfil 1</a>
+                            <a class="dropdown-item" href="/vacantes">Vacantes publicas</a>
+                            <a class="dropdown-item" href="/vacantes/crear">Publicar vacante</a>
+                            <a class="dropdown-item" href="/vacantes/usuario">Mis Publicaciones</a>
+                            <a class="dropdown-item" href="/usuario/chat">Chat</a>
+                            
+
+                            <a class="dropdown-item" href="#">------</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/usuario/salir">Cerrar sesion</a>
+                          </div>
+                        </li>
+                          {{else}} 
+                          <li class="nav-item active">
+                          <a class="nav-link" href="/usuario/login">Iniciar sesion</a>
+                         </li> 
+                         <li class="nav-item active">
+                          <a class="nav-link" href="/usuario/registro">Crear cuenta Rebuscate</a>
+                         </li>                       
+                          {{/if}}
+                        
+                      
+                        </ul>
+                     
+                     </div>
+                  </nav>

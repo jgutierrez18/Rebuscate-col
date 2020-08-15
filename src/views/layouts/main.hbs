@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="/assets/css/theme.css">
+  <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+
+  <title>Rebuscate Colombia</title>
+</head>
+<body>
+  {{>header}}
+  <section class="py-xl bg-cover bg-size--cover" style="background: rgb(232,242,255);
+    background: linear-gradient(180deg, rgba(232,242,255,1) 0%, rgba(40,140,255,1) 48%, rgba(25,43,63,1) 100%);">
+    <div class="container">
+      <div class="col-6 col-sm-4 container">
+      {{>messages}}
+      {{>errors}}
+    </div>{{{body}}} 
+      {{>chat}}
+    </div>
+
+  </section>
+  {{>footer}}
+
+  <!-- Bootstrap JS -->
+  <script src="/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/assets/vendor/popper/popper.min.js"></script>
+  <script src="/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!-- FontAwesome 5 -->
+  <script src="/assets/vendor/fontawesome/js/fontawesome-all.min.js"></script>
+
+  <!-- Custom scripts for this template-->
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/chat.js"></script>
+
+  <script src="/assets/js/jquery-ui.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+
+  <script>
+    $(function () {
+      $("#fechaExpedicion").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        buttonText: "<i class='fas fa-calendar'></i>",
+        yearRange: "1910:2019",
+      });
+      $("#fechaNacimiento").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        buttonText: "<i class='fa fa-calendar'></i>",
+        yearRange: "1910:2001",
+      });
+    });
+  </script>
+</body>
+
+</html>
